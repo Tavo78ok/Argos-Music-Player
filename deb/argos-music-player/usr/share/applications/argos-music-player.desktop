@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Argos Music Player
+Comment=Reproductor de música de Argos
+Exec=argos-music-player
+Icon=argos-music-player
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Player;
+Keywords=music;reproductor;argos;
