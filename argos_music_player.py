@@ -80,6 +80,32 @@ class Song:
     def from_path(cls, path):
         s=cls(path); name=Path(path).stem
         try:
+            ext=Path(path).suffix.lower()
+            # Opus y OGG: leer tags Vorbis directamente (easy=True falla con estos)
+            if ext in (".opus", ".ogg"):
+                from mutagen.oggopus import OggOpus
+                from mutagen.oggvorbis import OggVorbis
+                try:
+                    raw = OggOpus(path) if ext==".opus" else OggVorbis(path)
+                    def vget(key, default):
+                        # Vorbis comments: claves en minuscula
+                        v = raw.tags.get(key) or raw.tags.get(key.upper())
+                        return v[0] if v else default
+                    s.title  = vget("title",  name)
+                    s.artist = vget("artist", "Artista desconocido")
+                    s.album  = vget("album",  "Album desconocido")
+                    s.genre  = vget("genre",  "")
+                    tr = vget("tracknumber", None)
+                    if tr:
+                        try: s.tracknumber=int(str(tr).split("/")[0])
+                        except: pass
+                    if hasattr(raw,"info") and hasattr(raw.info,"length"):
+                        s.duration=int(raw.info.length)
+                    return s
+                except Exception as e:
+                    pass  # caer al metodo general
+
+            # Resto de formatos con easy=True
             audio=MutagenFile(path, easy=True)
             if audio is None: return s
             t=audio.get("title",[None])[0]; s.title=str(t) if t else name
