@@ -49,3 +49,11 @@ sudo dpkg -i argos-music-player_1.0.0_all.deb
 Una vez instalado, las teclas Play/Pause, Next, Previous del
 teclado funcionan automaticamente en GNOME, KDE, XFCE y LXDE.
 
+<img width="1440" height="900" alt="Captura de pantalla de 2026-04-16 21-23-06" src="https://github.com/user-attachments/assets/e36f41b9-925e-4ed8-bf5d-1f60e40f0d14" />
+
+<img width="1440" height="900" alt="Captura de pantalla de 2026-04-16 21-23-25" src="https://github.com/user-attachments/assets/cf345a30-5478-4798-a0ef-df986384f9ed" />
+
+<img width="1440" height="900" alt="Captura de pantalla de 2026-04-16 21-23-40" src="https://github.com/user-attachments/assets/5ac1387e-1a8a-476e-93b9-2294de9174bd" />
+
+
+
