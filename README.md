@@ -40,7 +40,7 @@ Parte de **ArgOS Platinum Edition**
 
 ```bash
 # Descargar el .deb desde Releases
-sudo dpkg -i argos-music-player_1.0.0_all.deb
+sudo dpkg -i argos-music-player_1.0.1_all.deb
 
 # Si faltan dependencias
 sudo apt-get install -f
@@ -80,7 +80,7 @@ python3 argos_music_player.py
 git clone https://github.com/Tavo78ok/argos-music-player
 cd argos-music-player
 bash build_deb.sh
-sudo dpkg -i argos-music-player_1.0.0_all.deb
+sudo dpkg -i argos-music-player_1.0.1_all.deb
 ```
 
 ---
