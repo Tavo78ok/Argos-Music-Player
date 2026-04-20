@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ArgOS Music Player v1.0 - GTK4 + libadwaita + GStreamer + SQLite"""
+"""ArgOS Music Player v1.0.1 - GTK4 + libadwaita + GStreamer + SQLite"""
 
 import os, sys, gi, threading, sqlite3, base64, struct, json
 from mutagen import File as MutagenFile
