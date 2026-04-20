@@ -13,7 +13,7 @@ mkdir -p "$DEB_ROOT/usr/bin"
 # 2. Archivo de control
 cat > "$DEB_ROOT/DEBIAN/control" << EOF
 Package: argos-music-player
-Version: 1.0.0
+Version: 1.0.1
 Section: utils
 Priority: optional
 Architecture: all
@@ -59,5 +59,5 @@ SVGEOF
 INSTALLED_SIZE=$(du -sk "$DEB_ROOT" | cut -f1)
 echo "Installed-Size: $INSTALLED_SIZE" >> "$DEB_ROOT/DEBIAN/control"
 
-dpkg-deb --build --root-owner-group "$DEB_ROOT" argos-music-player_1.0.0_all.deb
+dpkg-deb --build --root-owner-group "$DEB_ROOT" argos-music-player_1.0.1_all.deb
 echo "✅ Paquete completo generado. ¡Ahora sí debería aparecer en el menú!"
