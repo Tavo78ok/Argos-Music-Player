@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.0.1-blue?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey?style=flat-square&logo=linux)
 ![Python](https://img.shields.io/badge/python-3.10%2B-yellow?style=flat-square&logo=python)
 ![GTK](https://img.shields.io/badge/GTK-4.0-green?style=flat-square)
