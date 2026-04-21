@@ -186,11 +186,17 @@ Hecho con ❤️ por **Andrés** · [ArgOS Platinum Edition](https://github.com/
 
 </div>
 
-<img width="1440" height="900" alt="Captura de pantalla de 2026-04-16 21-23-06" src="https://github.com/user-attachments/assets/e36f41b9-925e-4ed8-bf5d-1f60e40f0d14" />
+<img width="1440" height="900" alt="Captura de pantalla_20260421_045833" src="https://github.com/user-attachments/assets/eb4a7d4a-e2be-4bca-88d9-3ef09d682ea1" />
 
-<img width="1440" height="900" alt="Captura de pantalla de 2026-04-16 21-23-25" src="https://github.com/user-attachments/assets/cf345a30-5478-4798-a0ef-df986384f9ed" />
+<img width="1440" height="900" alt="Captura de pantalla_20260421_045925" src="https://github.com/user-attachments/assets/a414c5d3-b5c3-4ec0-a45b-b50e8edc1615" />
 
-<img width="1440" height="900" alt="Captura de pantalla de 2026-04-16 21-23-40" src="https://github.com/user-attachments/assets/5ac1387e-1a8a-476e-93b9-2294de9174bd" />
+<img width="1440" height="900" alt="Captura de pantalla_20260421_050001" src="https://github.com/user-attachments/assets/942afdd3-728f-4097-978e-4d5243c14d54" />
+
+<img width="1440" height="900" alt="Captura de pantalla_20260421_050049" src="https://github.com/user-attachments/assets/34870dcd-18b9-433c-89a7-ee4bf880402c" />
+
+<img width="1440" height="900" alt="Captura de pantalla_20260421_050114" src="https://github.com/user-attachments/assets/6d52db60-a9b0-4089-9bca-4e1f72a71bae" />
+
+
 
 
 
