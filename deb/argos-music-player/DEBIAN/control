@@ -1,8 +1,0 @@
-Package: argos-music-player
-Version: 1.0.0
-Section: utils
-Priority: optional
-Architecture: all
-Maintainer: Tu Nombre <correo@ejemplo.com>
-Description: Reproductor de música para el ecosistema Argos.
-Installed-Size: 120

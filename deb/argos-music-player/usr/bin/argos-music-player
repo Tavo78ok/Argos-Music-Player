@@ -1,2 +1,0 @@
-#!/bin/bash
-python3 /usr/share/argos-music-player/argos_music_player.py "$@"
