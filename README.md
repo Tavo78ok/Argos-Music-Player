@@ -188,11 +188,15 @@ Hecho con ❤️ por **Andrés** · [ArgOS Platinum Edition](https://github.com/
 
 <img width="1440" height="900" alt="Captura de pantalla_20260421_045833" src="https://github.com/user-attachments/assets/eb4a7d4a-e2be-4bca-88d9-3ef09d682ea1" />
 
+
 <img width="1440" height="900" alt="Captura de pantalla_20260421_045925" src="https://github.com/user-attachments/assets/a414c5d3-b5c3-4ec0-a45b-b50e8edc1615" />
+
 
 <img width="1440" height="900" alt="Captura de pantalla_20260421_050001" src="https://github.com/user-attachments/assets/942afdd3-728f-4097-978e-4d5243c14d54" />
 
+
 <img width="1440" height="900" alt="Captura de pantalla_20260421_050049" src="https://github.com/user-attachments/assets/34870dcd-18b9-433c-89a7-ee4bf880402c" />
+
 
 <img width="1440" height="900" alt="Captura de pantalla_20260421_050114" src="https://github.com/user-attachments/assets/6d52db60-a9b0-4089-9bca-4e1f72a71bae" />
 
