@@ -1,4 +1,4 @@
-# 🎵 Argent Music Player
+# 🎵 OpenArgent Music Player
 
 <div align="center">
 
@@ -40,7 +40,7 @@ Parte de **OpenArgentOS**
 
 ```bash
 # Descargar el .deb desde Releases
-sudo dpkg -i argos-music-player_1.0.1_all.deb
+sudo dpkg -i openargent-music-player_1.0.1_all.deb
 
 # Si faltan dependencias
 sudo apt-get install -f
