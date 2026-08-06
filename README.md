@@ -1,4 +1,4 @@
-# 🎵 ArgOS Music Player
+# 🎵 Argent Music Player
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/badge/license-GPL--3.0-orange?style=flat-square)
 
 **Reproductor de música local para Linux**
-Parte de **ArgOS Platinum Edition**
+Parte de **OpenArgentOS**
 
 </div>
 
