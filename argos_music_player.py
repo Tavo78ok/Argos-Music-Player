@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ArgOS Music Player v1.0 - GTK4 + libadwaita + GStreamer + SQLite"""
+"""OpenArgentOS Music Player v1.1.0 - GTK4 + libadwaita + GStreamer + SQLite"""
 
 import os, sys, gi, threading, sqlite3, base64, struct, json
 from mutagen import File as MutagenFile
@@ -14,8 +14,8 @@ Gst.init(None)
 
 SUPPORTED_FORMATS = {".mp3",".flac",".ogg",".opus",".m4a",".aac",".wav",".wma",".ape",".mpc",".wv"}
 REPEAT_NONE, REPEAT_ONE, REPEAT_ALL = 0, 1, 2
-DB_PATH   = os.path.expanduser("~/.local/share/argos-music-player/library.db")
-CONF_PATH = os.path.expanduser("~/.local/share/argos-music-player/config.json")
+DB_PATH   = os.path.expanduser("~/.local/share/openargentos-music-player/library.db")
+CONF_PATH = os.path.expanduser("~/.local/share/openargentos-music-player/config.json")
 
 EQ_BANDS = [29, 59, 119, 237, 474, 947, 1889, 3770, 7523, 15011]
 EQ_PRESETS = {
@@ -459,7 +459,7 @@ class MPRIS2Service:
         try:
             self._conn=Gio.bus_get_sync(Gio.BusType.SESSION,None)
             Gio.bus_own_name_on_connection(
-                self._conn,"org.mpris.MediaPlayer2.ArgOSMusicPlayer",
+                self._conn,"org.mpris.MediaPlayer2.OpenArgentOSMusicPlayer",
                 Gio.BusNameOwnerFlags.NONE,None,None)
             node=Gio.DBusNodeInfo.new_for_xml(MPRIS2_XML)
             for iface in node.interfaces:
@@ -493,7 +493,7 @@ class MPRIS2Service:
             if iface=="org.mpris.MediaPlayer2":
                 d={"CanQuit":GLib.Variant("b",True),"CanRaise":GLib.Variant("b",True),
                    "HasTrackList":GLib.Variant("b",False),
-                   "Identity":GLib.Variant("s","ArgOS Music Player"),
+                   "Identity":GLib.Variant("s","OpenArgentOS Music Player"),
                    "SupportedUriSchemes":GLib.Variant("as",["file"]),
                    "SupportedMimeTypes":GLib.Variant("as",["audio/mpeg","audio/flac","audio/ogg","audio/opus"])}
                 return d.get(prop)
@@ -824,9 +824,9 @@ class LyricsManager:
             "artist_name":song.artist,"track_name":song.title,
             "album_name":song.album,"duration":song.duration})
         hdrs={
-            "User-Agent":"ArgOSMusicPlayer/1.0 (https://github.com/Tavo78ok/argos-music-player)",
+            "User-Agent":"OpenArgentOSMusicPlayer/1.1 (https://github.com/Tavo78ok/openargentos-music-player)",
             "Accept":"application/json",
-            "Lrclib-Client":"ArgOSMusicPlayer v1.0 (https://github.com/Tavo78ok/argos-music-player)",
+            "Lrclib-Client":"OpenArgentOSMusicPlayer v1.1 (https://github.com/Tavo78ok/openargentos-music-player)",
         }
         for timeout in (12,20):
             try:
@@ -861,10 +861,10 @@ class FolderRow(Gtk.ListBoxRow):
         self.folder_path = folder_path
 
 # ══ Main Window ════════════════════════════════════════════════════════
-class ArgOSMusicPlayer(Adw.ApplicationWindow):
+class OpenArgentOSMusicPlayer(Adw.ApplicationWindow):
     def __init__(self,app):
         super().__init__(application=app)
-        self.set_title("ArgOS Music Player")
+        self.set_title("OpenArgentOS Music Player")
         self.set_default_size(1080,700); self.set_size_request(720,520)
 
         self.db=MusicDatabase()
@@ -908,7 +908,7 @@ class ArgOSMusicPlayer(Adw.ApplicationWindow):
 
     def _build_ui(self):
         hdr=Adw.HeaderBar()
-        self._wtitle=Adw.WindowTitle(title="ArgOS Music Player",subtitle="Biblioteca")
+        self._wtitle=Adw.WindowTitle(title="OpenArgentOS Music Player",subtitle="Biblioteca")
         hdr.set_title_widget(self._wtitle)
         ob=Gtk.Button(icon_name="document-open-symbolic",tooltip_text="Abrir carpeta")
         ob.connect("clicked",self._on_open); hdr.pack_start(ob)
@@ -1690,7 +1690,7 @@ class MiniPlayer(Gtk.Window):
     def __init__(self, main_win):
         super().__init__()
         self.main=main_win
-        self.set_title("ArgOS Music")
+        self.set_title("OpenArgentOS Music")
         self.set_default_size(280,96)
         self.set_resizable(False)
         # En GTK4 keep_above se maneja por el compositor
@@ -1849,13 +1849,13 @@ class MiniPlayer(Gtk.Window):
         self._cover_stack.set_visible_child_name("ph")
 
 # ══ Application ════════════════════════════════════════════════════════
-class ArgOSMusicApp(Adw.Application):
+class OpenArgentOSMusicApp(Adw.Application):
     def __init__(self):
         # prgname debe configurarse ANTES de crear la app
         # Es lo que GTK4 usa como WM_CLASS instance name
-        GLib.set_prgname("argos-music-player")
-        GLib.set_application_name("ArgOS Music Player")
-        super().__init__(application_id="com.argos.musicplayer",flags=Gio.ApplicationFlags.FLAGS_NONE)
+        GLib.set_prgname("openargentos-music-player")
+        GLib.set_application_name("OpenArgentOS Music Player")
+        super().__init__(application_id="io.openargentos.MusicPlayer",flags=Gio.ApplicationFlags.FLAGS_NONE)
         Adw.StyleManager.get_default().set_color_scheme(Adw.ColorScheme.DEFAULT)
         self.connect("activate",self._on_activate)
         for name,cb in [
@@ -1869,17 +1869,17 @@ class ArgOSMusicApp(Adw.Application):
             act=Gio.SimpleAction.new(name,None); act.connect("activate",cb); self.add_action(act)
 
     def _on_activate(self,_):
-        self.win=ArgOSMusicPlayer(self); self.win.present()
+        self.win=OpenArgentOSMusicPlayer(self); self.win.present()
 
     def _about(self,*_):
         Adw.AboutDialog(
-            application_name="ArgOS Music Player",application_icon="audio-x-generic",
-            version="1.0.0",developer_name="Andres · ArgOS Platinum Edition",
-            comments="Reproductor local con EQ, crossfade, colas multiples, MPRIS2 y editor de etiquetas.",
+            application_name="OpenArgentOS Music Player",application_icon="openargentos-music-player",
+            version="1.1.0",developer_name="Andrés · OpenArgentOS Platinum Edition",
+            comments="Reproductor de música local para OpenArgentOS Platinum Edition. EQ, crossfade, colas múltiples, letras LRC, MPRIS2, mini reproductor y más.",
             license_type=Gtk.License.GPL_3_0).present(self.win)
 
 def main():
-    app=ArgOSMusicApp(); sys.exit(app.run(sys.argv))
+    app=OpenArgentOSMusicApp(); sys.exit(app.run(sys.argv))
 
 if __name__=="__main__":
     main()

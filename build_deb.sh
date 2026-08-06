@@ -2,12 +2,11 @@
 set -e
 
 VERSION="1.1.0"
-PKG="argos-music-player"
+PKG="openargentos-music-player"
 DEB_ROOT="deb/$PKG"
 
 echo "▶ Preparando estructura .deb..."
 
-# Directorios
 mkdir -p "$DEB_ROOT/DEBIAN"
 mkdir -p "$DEB_ROOT/usr/bin"
 mkdir -p "$DEB_ROOT/usr/share/$PKG"
@@ -17,34 +16,30 @@ mkdir -p "$DEB_ROOT/usr/share/icons/hicolor/256x256/apps"
 mkdir -p "$DEB_ROOT/usr/share/icons/hicolor/128x128/apps"
 mkdir -p "$DEB_ROOT/usr/share/icons/hicolor/48x48/apps"
 
-# ── Archivo principal
 cp argos_music_player.py "$DEB_ROOT/usr/share/$PKG/"
 
-# ── Launcher
 cat > "$DEB_ROOT/usr/bin/$PKG" << 'EOF'
 #!/bin/bash
-exec python3 /usr/share/argos-music-player/argos_music_player.py "$@"
+exec python3 /usr/share/openargentos-music-player/argos_music_player.py "$@"
 EOF
 chmod 755 "$DEB_ROOT/usr/bin/$PKG"
 
-# ── .desktop
 cat > "$DEB_ROOT/usr/share/applications/$PKG.desktop" << 'EOF'
 [Desktop Entry]
-Name=ArgOS Music Player
+Name=OpenArgentOS Music Player
 GenericName=Reproductor de música
-Comment=Reproductor de música local para ArgOS Platinum Edition
-Exec=argos-music-player
-Icon=argos-music-player
+Comment=Reproductor de música local para OpenArgentOS Platinum Edition
+Exec=openargentos-music-player
+Icon=openargentos-music-player
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;Player;GTK;
 MimeType=audio/mpeg;audio/flac;audio/ogg;audio/opus;audio/x-wav;audio/mp4;audio/x-m4a;
-Keywords=music;audio;player;mp3;flac;opus;lrc;letras;
-StartupWMClass=argos-music-player
+Keywords=music;audio;player;mp3;flac;opus;lrc;letras;openargentos;
+StartupWMClass=openargentos-music-player
 StartupNotify=true
 EOF
 
-# ── Icono SVG
 cat > "$DEB_ROOT/usr/share/icons/hicolor/scalable/apps/$PKG.svg" << 'EOF'
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
@@ -62,7 +57,6 @@ cat > "$DEB_ROOT/usr/share/icons/hicolor/scalable/apps/$PKG.svg" << 'EOF'
 </svg>
 EOF
 
-# ── Generar PNGs
 echo "▶ Generando iconos PNG..."
 SVG_SRC="$DEB_ROOT/usr/share/icons/hicolor/scalable/apps/$PKG.svg"
 
@@ -76,22 +70,14 @@ generate_png() {
                  --export-filename="$dest" "$SVG_SRC" 2>/dev/null
     elif command -v convert &>/dev/null; then
         convert -background none -resize ${size}x${size} "$SVG_SRC" "$dest" 2>/dev/null
-    else
-        python3 -c "
-try:
-    import cairosvg
-    cairosvg.svg2png(url='$SVG_SRC',write_to='$dest',output_width=$size,output_height=$size)
-except: pass
-" 2>/dev/null || echo "  ⚠ No se pudo generar PNG ${size}x${size}"
     fi
-    [ -f "$dest" ] && echo "  ✓ PNG ${size}x${size}" || true
+    [ -f "$dest" ] && echo "  ✓ PNG ${size}x${size}" || echo "  ⚠ No se pudo generar PNG ${size}x${size}"
 }
 
 generate_png 256
 generate_png 128
 generate_png 48
 
-# ── control
 cat > "$DEB_ROOT/DEBIAN/control" << EOF
 Package: $PKG
 Version: $VERSION
@@ -112,8 +98,8 @@ Depends: python3 (>= 3.10),
 Recommends: gstreamer1.0-plugins-bad
 Maintainer: Andrés <argos@platinum.edition>
 Installed-Size: $(du -sk "$DEB_ROOT" | cut -f1)
-Description: ArgOS Music Player
- Reproductor de música local para ArgOS Platinum Edition.
+Description: OpenArgentOS Music Player
+ Reproductor de música local para OpenArgentOS Platinum Edition.
  Soporta MP3, FLAC, OGG, Opus, M4A y más formatos.
  .
  Funciones: ecualizador 10 bandas, fundido entre canciones,
@@ -122,7 +108,6 @@ Description: ArgOS Music Player
  mini reproductor flotante e integración MPRIS2.
 EOF
 
-# ── postinst
 cat > "$DEB_ROOT/DEBIAN/postinst" << 'EOF'
 #!/bin/bash
 set -e
@@ -136,7 +121,6 @@ exit 0
 EOF
 chmod 755 "$DEB_ROOT/DEBIAN/postinst"
 
-# ── postrm
 cat > "$DEB_ROOT/DEBIAN/postrm" << 'EOF'
 #!/bin/bash
 set -e
@@ -150,7 +134,6 @@ exit 0
 EOF
 chmod 755 "$DEB_ROOT/DEBIAN/postrm"
 
-# ── Construir
 echo "▶ Construyendo paquete .deb..."
 dpkg-deb --build --root-owner-group "$DEB_ROOT" "${PKG}_${VERSION}_all.deb"
 echo ""
