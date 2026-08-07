@@ -69,18 +69,18 @@ sudo apt install \
 **2. Ejecutar:**
 
 ```bash
-git clone https://github.com/Tavo78ok/argos-music-player
-cd argos-music-player
-python3 argos_music_player.py
+git clone https://github.com/Tavo78ok/argent-music-player
+cd argent-music-player
+python3 argent_music_player.py
 ```
 
 ### Opción C — Construir el .deb manualmente
 
 ```bash
-git clone https://github.com/Tavo78ok/argos-music-player
-cd argos-music-player
+git clone https://github.com/Tavo78ok/argent-music-player
+cd argent-music-player
 bash build_deb.sh
-sudo dpkg -i argos-music-player_1.0.1_all.deb
+sudo dpkg -i argent-music-player_1.0.1_all.deb
 ```
 
 ---
@@ -112,18 +112,18 @@ Configurable entre 0 y 10 segundos. Con valor 0 el fundido está desactivado. Cu
 Accesible con el botón de lápiz mientras hay una canción en reproducción. Guarda los cambios directamente en el archivo de audio (usando Mutagen) y actualiza la base de datos SQLite sin necesidad de re-escanear.
 
 ### 📡 MPRIS2
-Registra la aplicación como `org.mpris.MediaPlayer2.ArgOSMusicPlayer`. Las teclas **Play/Pause**, **Siguiente** y **Anterior** del teclado funcionan automáticamente en GNOME, KDE Plasma, XFCE y LXDE. El reproductor también aparece en los paneles de audio del sistema.
+Registra la aplicación como `org.mpris.MediaPlayer2.ArgentMusicPlayer`. Las teclas **Play/Pause**, **Siguiente** y **Anterior** del teclado funcionan automáticamente en GNOME, KDE Plasma, XFCE y LXDE. El reproductor también aparece en los paneles de audio del sistema.
 
 ---
 
 ## 📁 Estructura del proyecto
 
 ```
-argos-music-player/
-├── argos_music_player.py      # Aplicación principal
+argent-music-player/
+├── argent_music_player.py      # Aplicación principal
 ├── build_deb.sh               # Script para generar el .deb
 ├── deb/
-│   └── argos-music-player/
+│   └── argent-music-player/
 │       ├── DEBIAN/
 │       │   ├── control        # Metadatos del paquete
 │       │   └── postinst       # Script post-instalación
@@ -131,7 +131,7 @@ argos-music-player/
 │           ├── bin/           # Launcher del sistema
 │           └── share/
 │               ├── applications/       # Entrada .desktop
-│               ├── argos-music-player/ # Archivo principal
+│               ├── argent-music-player/ # Archivo principal
 │               └── icons/              # Ícono de la app
 └── README.md
 ```
@@ -142,11 +142,11 @@ argos-music-player/
 
 | Ruta | Contenido |
 |------|-----------|
-| `~/.local/share/argos-music-player/library.db` | Biblioteca SQLite |
+| `~/.local/share/argent-music-player/library.db` | Biblioteca SQLite |
 
 Para forzar un re-escaneo completo de la biblioteca:
 ```bash
-rm ~/.local/share/argos-music-player/library.db
+rm ~/.local/share/argent-music-player/library.db
 ```
 
 ---
@@ -182,7 +182,7 @@ Consulta el archivo [`LICENSE`](LICENSE) para más detalles.
 
 <div align="center">
 
-Hecho con ❤️ por **Andrés** · [ArgOS Platinum Edition](https://github.com/Tavo78ok)
+Hecho con ❤️ por **Gustavo** ·   OpenArgentOS (https://github.com/Tavo78ok)
 
 </div>
 
