@@ -40,7 +40,7 @@ Parte de **OpenArgentOS**
 
 ```bash
 # Descargar el .deb desde Releases
-sudo dpkg -i openargent-music-player_1.0.1_all.deb
+sudo dpkg -i openargent-music-player_1.1.0_all.deb
 
 # Si faltan dependencias
 sudo apt-get install -f
@@ -80,7 +80,7 @@ python3 argent_music_player.py
 git clone https://github.com/Tavo78ok/argent-music-player
 cd argent-music-player
 bash build_deb.sh
-sudo dpkg -i argent-music-player_1.0.1_all.deb
+sudo dpkg -i argent-music-player_1.1.0_all.deb
 ```
 
 ---
