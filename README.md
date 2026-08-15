@@ -14,6 +14,24 @@ GTK4 + libadwaita + GStreamer + SQLite
 </div>
 
 ---
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-01-08" src="https://github.com/user-attachments/assets/a8055f4a-e890-4b77-bb36-25e51b16db86" />
+
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-02-01" src="https://github.com/user-attachments/assets/b06a62fd-6926-40af-88f8-a91354127286" />
+
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-02-51" src="https://github.com/user-attachments/assets/64e691e4-9d3a-4211-a2b4-caddc1e21639" />
+
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-03-25" src="https://github.com/user-attachments/assets/b85bfc98-b0ed-4d19-a485-6f56104d0203" />
+
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-04-11" src="https://github.com/user-attachments/assets/0674776f-5030-42e7-9b07-e0591bddc7aa" />
+
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-04-35" src="https://github.com/user-attachments/assets/fc0d3fa0-6943-4185-b117-8857b5baa65c" />
+
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-05-14" src="https://github.com/user-attachments/assets/4773b509-fef8-4d67-8a98-d0b1984e9395" />
+
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-05-39" src="https://github.com/user-attachments/assets/bb3f0e90-87c5-4541-be14-ecc911846d39" />
+
+<img width="1440" height="900" alt="Captura de pantalla_2026-08-15_16-05-59" src="https://github.com/user-attachments/assets/5a2ef56e-8dbc-4889-b64a-d29900ab5298" />
+
 
 ## ✨ Características
 
